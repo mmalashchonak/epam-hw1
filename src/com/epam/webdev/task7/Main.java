@@ -7,7 +7,8 @@ public class Main {
         System.out.println("Input second point.");
         Point secondPoint = PointProcessor.readInputPoint();
 
-        System.out.println(firstPoint + (firstPoint.compareTo(secondPoint) > 0 ? " farther " : " closer ") +
+        System.out.println(firstPoint + (firstPoint.compareTo(secondPoint) > 0 ? " farther "
+                : firstPoint.compareTo(secondPoint) < 0 ? " closer " : " at the same distance ") +
                 "to origin than " + secondPoint);
     }
 }
