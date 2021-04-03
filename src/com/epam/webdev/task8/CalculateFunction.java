@@ -39,5 +39,4 @@ public class CalculateFunction {
 
         return input;
     }
-
 }

@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class EvenChecker {
 
+    public static final int MAX_NUMBER_OF_EVEN_NUMBERS = 2;
+
     @SuppressWarnings("resource")
     public static int readIntegerNumber() {
         Scanner sc = new Scanner(System.in);

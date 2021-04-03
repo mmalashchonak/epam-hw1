@@ -6,16 +6,16 @@ public class Main {
 
     public static void main(String[] args) throws IncorrectBordersException, IncorrectStepException {
         System.out.println("Input left border: ");
-        double leftBorder = FunctionCalculator.readInputData();
+        double leftBorder = FunctionProcessor.readInputData();
 
         System.out.println("Input right border: ");
-        double rightBorder = FunctionCalculator.readInputData();
+        double rightBorder = FunctionProcessor.readInputData();
 
         System.out.println("Input calculation step: ");
-        double calculationStep = FunctionCalculator.readInputData();
+        double calculationStep = FunctionProcessor.readInputData();
 
-        Map<Double, Double> results = FunctionCalculator.calculateFunctionValues(leftBorder, rightBorder, calculationStep);
+        Map<Double, Double> results = FunctionProcessor.calculateFunctionValues(leftBorder, rightBorder, calculationStep);
 
-        FunctionCalculator.printResults(results);
+        FunctionProcessor.printResults(results);
     }
 }

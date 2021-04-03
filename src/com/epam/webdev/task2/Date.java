@@ -1,9 +1,10 @@
 package com.epam.webdev.task2;
 
+import java.io.Serializable;
 import java.time.Month;
 import java.util.Objects;
 
-public class Date {
+public class Date implements Serializable {
 
     private int year;
     private Month month;
@@ -17,7 +18,12 @@ public class Date {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(int year) throws NegativeYearException {
+
+        if(year < 0) {
+            throw new NegativeYearException();
+        }
+
         this.year = year;
     }
 

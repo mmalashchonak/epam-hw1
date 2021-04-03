@@ -1,8 +1,9 @@
 package com.epam.webdev.task7;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Point implements Comparable<Point>{
+public class Point implements Comparable<Point>, Serializable {
 
     private int x;
     private int y;

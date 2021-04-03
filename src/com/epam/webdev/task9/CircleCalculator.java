@@ -4,12 +4,22 @@ import java.util.Scanner;
 
 public class CircleCalculator {
 
-    public static double calculateCircleLength(double radius) {
+    public static double calculateCircleLength(double radius) throws IncorrectRadiusException {
+
+        if (radius <= 0) {
+            throw new IncorrectRadiusException();
+        }
+
         double circleLength = 2 * radius * Math.PI;
         return circleLength;
     }
 
-    public static double calculateCircleSquare(double radius) {
+    public static double calculateCircleSquare(double radius) throws IncorrectRadiusException {
+
+        if (radius <= 0) {
+            throw new IncorrectRadiusException();
+        }
+
         double circleSquare = Math.PI * radius * radius;
         return circleSquare;
     }
@@ -20,13 +30,14 @@ public class CircleCalculator {
         double input = 0;
 
         System.out.println("Input radius: ");
-
-        while (!sc.hasNextDouble()) {
-            sc.nextLine();
-            System.out.println("Your input is incorrect. Please, try again:");
+        while (input <= 0) {
+            if (sc.hasNextDouble()) {
+                input = sc.nextDouble();
+            } else {
+                System.out.println("Your input is incorrect. Please, try again:");
+                sc.nextLine();
+            }
         }
-
-        input = sc.nextDouble();
 
         return input;
     }

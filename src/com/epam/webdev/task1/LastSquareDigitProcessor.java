@@ -2,7 +2,7 @@ package com.epam.webdev.task1;
 
 import java.util.Scanner;
 
-public class LastSquareDigitCalculator {
+public class LastSquareDigitProcessor {
 
     @SuppressWarnings("resource")
     public static double readInputNumber() {

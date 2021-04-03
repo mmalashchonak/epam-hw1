@@ -8,17 +8,32 @@ public class TimeCalculator {
     public static final int SECONDS_IN_MINUTE = 60;
     public static final int SECONDS_IN_DAY = 86400;
 
-    public static int calculateHoursInInputTime(int seconds) {
+    public static int calculateHoursInInputTime(int seconds) throws NegativeTimeException {
+
+        if(seconds < 0){
+            throw new NegativeTimeException();
+        }
+
         int hoursInInputTime = seconds / (MINUTES_IN_HOUR * SECONDS_IN_MINUTE);
         return hoursInInputTime;
     }
 
-    public static int calculateMinutesRestInInputTime(int seconds) {
+    public static int calculateMinutesRestInInputTime(int seconds) throws NegativeTimeException {
+
+        if(seconds < 0){
+            throw new NegativeTimeException();
+        }
+
         int minutesRestInInputTime = (seconds % (MINUTES_IN_HOUR * SECONDS_IN_MINUTE)) / (SECONDS_IN_MINUTE);
         return minutesRestInInputTime;
     }
 
-    public static int calculateSecondsRestInInputTime(int seconds) {
+    public static int calculateSecondsRestInInputTime(int seconds) throws NegativeTimeException {
+
+        if(seconds < 0){
+            throw new NegativeTimeException();
+        }
+
         int secondsRestInInputTime = seconds % SECONDS_IN_MINUTE;
         return secondsRestInInputTime;
     }

@@ -3,7 +3,7 @@ package com.epam.webdev.task2;
 import java.time.Month;
 import java.util.Scanner;
 
-public class DaysInMonthCalculator {
+public class DaysInMonthProcessor {
 
     public static final int LEAP_YEAR_DIVIDER_FOUR = 4;
     public static final int LEAP_YEAR_DIVIDER_HUNDRED = 100;
@@ -29,7 +29,11 @@ public class DaysInMonthCalculator {
         return date;
     }
 
-    public static boolean isLeapYear(int year) {
+    public static boolean isLeapYear(int year) throws NegativeYearException {
+
+        if(year < 0) {
+            throw new NegativeYearException();
+        }
 
         boolean isLeapYear;
 
@@ -46,7 +50,7 @@ public class DaysInMonthCalculator {
     }
 
 
-    public static int calculateDaysInMonth(Date date) {
+    public static int calculateDaysInMonth(Date date) throws NegativeYearException {
         int days;
 
         Month month = date.getMonth();

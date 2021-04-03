@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class FunctionCalculator {
+public class FunctionProcessor {
 
     public static Map<Double, Double> calculateFunctionValues(double leftBorder, double rightBorder, double step)
             throws IncorrectBordersException, IncorrectStepException {

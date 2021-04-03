@@ -11,7 +11,7 @@ public class Main {
 
         int countEvenNumbers = EvenChecker.countEvenNumbers(a, b, c, d);
 
-        checkTwoEven = countEvenNumbers >= 2;
+        checkTwoEven = countEvenNumbers >= EvenChecker.MAX_NUMBER_OF_EVEN_NUMBERS;
 
         System.out.println("Result of even checking: " + checkTwoEven);
     }

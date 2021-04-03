@@ -2,7 +2,7 @@ package com.epam.webdev.task5;
 
 import java.util.Scanner;
 
-public class PerfectNumberChecker {
+public class PerfectNumberProcessor {
 
     @SuppressWarnings("resource")
     public static int readIntegerNumber() {
