@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws IncorrectAreaException, IncorrectLengthException {
 
-        double outerSquareArea = SquareProcessor.readInputSquareArea();
+        double outerSquareArea = InputReader.readInputSquareArea();
         double innerSquareArea = SquareProcessor.calculateInnerSquareArea(outerSquareArea);
         double squareAreasRatio = SquareProcessor.calculateSquaresAreasRatio(outerSquareArea, innerSquareArea);
 

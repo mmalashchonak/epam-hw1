@@ -1,32 +1,11 @@
 package com.epam.webdev.task3;
 
-import java.util.Scanner;
-
 public class SquareProcessor {
-
-    @SuppressWarnings("resource")
-    public static double readInputSquareArea() {
-        Scanner sc = new Scanner(System.in);
-        double inputArea = 0;
-
-        System.out.println("Input outer square area: ");
-
-        while (inputArea <= 0) {
-            if (sc.hasNextDouble()) {
-                inputArea = sc.nextDouble();
-            } else {
-                System.out.println("Your input is incorrect. Please, try again:");
-                sc.nextLine();
-            }
-        }
-
-        return inputArea;
-    }
 
     public static double calculateInnerSquareArea(double outerSquareArea) throws IncorrectAreaException, IncorrectLengthException {
 
         if (outerSquareArea <= 0){
-            throw new IncorrectAreaException();
+            throw new IncorrectAreaException("Area can not be negative or null.");
         }
 
         double innerSquareDiagonalLength;
@@ -43,7 +22,7 @@ public class SquareProcessor {
     public static double calculateSquaresAreasRatio(double firstArea, double secondArea) throws IncorrectAreaException {
 
         if(firstArea <= 0 || secondArea <= 0){
-            throw new IncorrectAreaException();
+            throw new IncorrectAreaException("Area can not be negative or null.");
         }
 
         double areaRatio = firstArea / secondArea;
@@ -53,7 +32,7 @@ public class SquareProcessor {
     private static double calculateSideLengthBySquareArea(double squareArea) throws IncorrectAreaException {
 
         if(squareArea <= 0){
-            throw new IncorrectAreaException();
+            throw new IncorrectAreaException("Area can not be negative or null.");
         }
 
         double sideLength = Math.sqrt(squareArea);
@@ -63,7 +42,7 @@ public class SquareProcessor {
     private static double calculateSquareAreaBySideLength(double sideLength) throws IncorrectLengthException {
 
         if(sideLength <= 0){
-            throw new IncorrectLengthException();
+            throw new IncorrectLengthException("Length can not be negative or null.");
         }
 
         double squareArea = sideLength * sideLength;
@@ -73,7 +52,7 @@ public class SquareProcessor {
     private static double calculateSquareSideLengthByDiagonalLength(double diagonalLength) throws IncorrectLengthException {
 
         if(diagonalLength <= 0){
-            throw new IncorrectLengthException();
+            throw new IncorrectLengthException("Length can not be negative or null.");
         }
 
         double squareSideLength = Math.sqrt(diagonalLength * diagonalLength / 2);

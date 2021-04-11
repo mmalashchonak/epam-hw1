@@ -2,16 +2,12 @@ package com.epam.webdev.task4;
 
 public class Main {
     public static void main(String[] args) {
-        int a = EvenChecker.readIntegerNumber();
-        int b = EvenChecker.readIntegerNumber();
-        int c = EvenChecker.readIntegerNumber();
-        int d = EvenChecker.readIntegerNumber();
+        int a = InputReader.readIntegerNumber();
+        int b = InputReader.readIntegerNumber();
+        int c = InputReader.readIntegerNumber();
+        int d = InputReader.readIntegerNumber();
 
-        boolean checkTwoEven;
-
-        int countEvenNumbers = EvenChecker.countEvenNumbers(a, b, c, d);
-
-        checkTwoEven = countEvenNumbers >= EvenChecker.MAX_NUMBER_OF_EVEN_NUMBERS;
+        boolean checkTwoEven = EvenChecker.checkIfTwoEvenNumbers(a, b, c, d);
 
         System.out.println("Result of even checking: " + checkTwoEven);
     }

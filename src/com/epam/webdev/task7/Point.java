@@ -1,7 +1,6 @@
 package com.epam.webdev.task7;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class Point implements Comparable<Point>, Serializable {
 
@@ -37,7 +36,7 @@ public class Point implements Comparable<Point>, Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Point)) return false;
+        if (!(o.getClass() == Point.class)) return false;
         Point point = (Point) o;
         return getX() == point.getX() &&
                 getY() == point.getY();
@@ -45,7 +44,8 @@ public class Point implements Comparable<Point>, Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getX(), getY());
+        int result = 31 * getX() + getY();
+        return result;
     }
 
     @Override

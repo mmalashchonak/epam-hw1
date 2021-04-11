@@ -2,7 +2,7 @@ package com.epam.webdev.task9;
 
 public class Main {
     public static void main(String[] args) throws IncorrectRadiusException {
-        double radius = CircleCalculator.readInputRadius();
+        double radius = InputReader.readInputRadius();
 
         double circleLength = CircleCalculator.calculateCircleLength(radius);
         double circleSquare = CircleCalculator.calculateCircleSquare(radius);

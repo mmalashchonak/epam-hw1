@@ -1,7 +1,6 @@
 package com.epam.webdev.task2;
 
 import java.time.Month;
-import java.util.Scanner;
 
 public class DaysInMonthProcessor {
 
@@ -9,30 +8,10 @@ public class DaysInMonthProcessor {
     public static final int LEAP_YEAR_DIVIDER_HUNDRED = 100;
     public static final int LEAP_YEAR_DIVIDER_FOUR_HUNDRED = 400;
 
-    public static final String YEAR_PATTERN = "[0-9]+";
-    public static final String MONTH_PATTERN = "^(1[0-2]|[1-9])$";
-
-    public static Date readInputDate() {
-        int year;
-        Month month;
-        Date date;
-
-        System.out.println("Input year: ");
-
-        year = readIntByPattern(YEAR_PATTERN);
-
-        System.out.println("Input month from 1 to 12: ");
-
-        month = Month.of(readIntByPattern(MONTH_PATTERN));
-        date = new Date(year, month);
-
-        return date;
-    }
-
     public static boolean isLeapYear(int year) throws NegativeYearException {
 
         if(year < 0) {
-            throw new NegativeYearException();
+            throw new NegativeYearException("Year can not be negative.");
         }
 
         boolean isLeapYear;
@@ -67,19 +46,5 @@ public class DaysInMonthProcessor {
         }
 
         return days;
-    }
-
-    @SuppressWarnings("resource")
-    public static int readIntByPattern(String pattern) {
-        Scanner sc = new Scanner(System.in);
-        int output;
-
-        while (!sc.hasNext(pattern)) {
-            System.out.println("Your input is incorrect. Please, try again:");
-            sc.nextLine();
-        }
-
-        output = sc.nextInt();
-        return output;
     }
 }

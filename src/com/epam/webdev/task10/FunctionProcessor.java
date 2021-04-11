@@ -2,7 +2,6 @@ package com.epam.webdev.task10;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class FunctionProcessor {
 
@@ -10,11 +9,11 @@ public class FunctionProcessor {
             throws IncorrectBordersException, IncorrectStepException {
 
         if (leftBorder >= rightBorder) {
-            throw new IncorrectBordersException();
+            throw new IncorrectBordersException("Left border can no be bigger than right border.");
         }
 
         if (step <= 0) {
-            throw new IncorrectStepException();
+            throw new IncorrectStepException("Step can not be negative or zero.");
         }
 
         Map<Double, Double> results = new LinkedHashMap<>();
@@ -25,27 +24,5 @@ public class FunctionProcessor {
         }
 
         return results;
-    }
-
-    @SuppressWarnings("resource")
-    public static double readInputData() {
-        Scanner sc = new Scanner(System.in);
-        double input = 0;
-
-        System.out.println("Input: ");
-
-        while (!sc.hasNextDouble()) {
-            sc.nextLine();
-            System.out.println("Your input is incorrect. Please, try again:");
-        }
-
-        input = sc.nextDouble();
-
-        return input;
-    }
-
-    public static void printResults(Map<Double, Double> results) {
-        System.out.println("Input x: | Result");
-        results.forEach((key, value) -> System.out.println(key + " | " + value));
     }
 }

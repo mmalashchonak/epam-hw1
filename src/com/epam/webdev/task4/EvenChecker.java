@@ -1,37 +1,24 @@
 package com.epam.webdev.task4;
 
-import java.util.Scanner;
-
 public class EvenChecker {
 
     public static final int MAX_NUMBER_OF_EVEN_NUMBERS = 2;
 
-    @SuppressWarnings("resource")
-    public static int readIntegerNumber() {
-        Scanner sc = new Scanner(System.in);
-        int input = 0;
+    public static boolean checkIfTwoEvenNumbers(int a, int b, int c, int d) {
+        int[] inputArray = {a, b, c, d};
 
-        System.out.println("Input your number: ");
-
-        while (!sc.hasNextInt()) {
-            sc.nextLine();
-            System.out.println("Your input is incorrect. Please, try again:");
-        }
-
-        input = sc.nextInt();
-
-        return input;
-    }
-
-    public static int countEvenNumbers(int... input) {
         int evenCount = 0;
 
-        for (int i : input) {
+        for (int i : inputArray) {
             if (i % 2 == 0) {
                 evenCount++;
             }
+
+            if(evenCount >= MAX_NUMBER_OF_EVEN_NUMBERS) {
+                return true;
+            }
         }
 
-        return evenCount;
+        return false;
     }
 }

@@ -2,7 +2,6 @@ package com.epam.webdev.task2;
 
 import java.io.Serializable;
 import java.time.Month;
-import java.util.Objects;
 
 public class Date implements Serializable {
 
@@ -38,7 +37,7 @@ public class Date implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Date)) return false;
+        if (!(o.getClass() == Date.class)) return false;
         Date date = (Date) o;
         return getYear() == date.getYear() &&
                 getMonth() == date.getMonth();
@@ -46,7 +45,9 @@ public class Date implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getYear(), getMonth());
+        int result = 31 * getYear() + (getMonth() == null ? 0 : getMonth().hashCode());
+
+        return result;
     }
 
     @Override

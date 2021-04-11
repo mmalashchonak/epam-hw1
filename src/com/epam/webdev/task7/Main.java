@@ -1,14 +1,14 @@
 package com.epam.webdev.task7;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SameDistanceException {
         System.out.println("Input first point.");
-        Point firstPoint = PointProcessor.readInputPoint();
+        Point firstPoint = InputReader.readInputPoint();
         System.out.println("Input second point.");
-        Point secondPoint = PointProcessor.readInputPoint();
+        Point secondPoint = InputReader.readInputPoint();
 
-        System.out.println(firstPoint + (firstPoint.compareTo(secondPoint) > 0 ? " farther "
-                : firstPoint.compareTo(secondPoint) < 0 ? " closer " : " at the same distance ") +
-                "to origin than " + secondPoint);
+        Point closerPoint = PointProcessor.returnPointCloserToOrigin(firstPoint, secondPoint);
+
+        System.out.println(closerPoint + " closer to origin.");
     }
 }
